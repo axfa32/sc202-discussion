@@ -15,7 +15,7 @@ class Solution:
             sec = cur.next.next #initialiing the second node
             cur.next = sec #then we let the seond node become the node after the dummy node
             first.next = sec.next #then we let the node originally after the second node become connected to the first node
-            sec.next = first
-            cur = cur.next.next
+            sec.next = first #then we let the first node become connected to the second node now the first node
+            cur = cur.next.next #then we point to the 3rd pointer 
         return dummy.next     
         
