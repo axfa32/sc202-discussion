@@ -11,10 +11,10 @@ class Solution:
         cur = dummy
         
         while cur.next and cur.next.next:
-            first = cur.next
-            sec = cur.next.next
-            cur.next = sec
-            first.next = sec.next
+            first = cur.nex #initializing the first node 
+            sec = cur.next.next #initialiing the second node
+            cur.next = sec #then we let the seond node become the node after the dummy node
+            first.next = sec.next #then we let the node originally after the second node become connected to the first node
             sec.next = first
             cur = cur.next.next
         return dummy.next     
