@@ -3,6 +3,7 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+#recursion
 class Solution:
     def swapPairs(self, head: ListNode) -> ListNode:
         if head is None or head.next is None: return head
@@ -18,4 +19,15 @@ class Solution:
             sec.next = first #then we let the first node become connected to the second node now the first node
             cur = cur.next.next #then we point to the 3rd pointer 
         return dummy.next     
+#iteration
+class Solution:
+    def swapPairs(self, head: ListNode) -> ListNode:
+        if head is None or head.next is None:
+            return head
+        
+        temp=head
+        while temp is not None and temp.next is not None:
+            temp.val,temp.next.val=temp.next.val,temp.val
+            temp=temp.next.next
+        return head
         
