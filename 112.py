@@ -21,9 +21,8 @@ class Solution:
 		if root.right:
 		    self.dfs(root.right, target-root.val, res)
 
-# BFS with stack
+# DFS with stack
 class Solution:
-	# DFS with stack
     def hasPathSum(self, root, sum):
         if not root:
             return False
