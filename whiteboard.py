@@ -1,6 +1,6 @@
 class Solution:
     def bstFromPreorder(self, preorder: List[int]) -> TreeNode:
-        def helper(lower, upper):
+        def helper(a, b):
             nonlocal idx
             # if all elements from preorder are used
             # then the tree is constructed
@@ -23,4 +23,4 @@ class Solution:
         
         idx = 0
         n = len(preorder)
-        return helper(lower = float('-inf'), upper = float('inf'))
+        return helper(float('-inf'), float('inf'))
