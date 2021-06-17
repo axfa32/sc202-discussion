@@ -19,7 +19,7 @@ class Trie:
             if char not in node.children:
                 node.children[char]=TrieNode()
             node = node.children[char]
-        nodeis_word = True
+        node.is_word = True
         
     def search(self, word: str) -> bool:
         """
@@ -35,6 +35,7 @@ class Trie:
         """
         Returns if there is any word in the trie that starts with the given prefix.
         """
+        node = self.root
         for char in prefix:
             if char not in node.children:
                 return False
