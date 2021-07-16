@@ -1,26 +1,19 @@
 class Solution:
-    def bstFromPreorder(self, preorder: List[int]) -> TreeNode:
-        def helper(a, b):
-            nonlocal idx
-            # if all elements from preorder are used
-            # then the tree is constructed
-            if idx == n:
-                return None
-            
-            val = preorder[idx]
-            # if the current element 
-            # couldn't be placed here to meet BST requirements
-            if val < lower or val > upper:
-                return None
-            
-            # place the current element
-            # and recursively construct subtrees
-            idx += 1
-            root = TreeNode(val)
-            root.left = helper(lower, val)
-            root.right = helper(val, upper)
-            return root
+    def isValid(self, s: str) -> bool:
+        stack = []
+        for char in s:
+            if char in [ "(", "[", "{" ]:
+                stack.append(char)
+            else:
+                if len(stack) == 0:
+                    return False
+                if char == ")" and stack.pop() != "(":
+                    return False
+                if char == "]" and stack.pop() != "[":
+                    return False
+                if char == "}" and stack.pop() != "{":
+                    return False
+            return len(stack) == 0
         
-        idx = 0
-        n = len(preorder)
-        return helper(float('-inf'), float('inf'))
+        
+        
