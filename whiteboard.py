@@ -1,19 +1,14 @@
 class Solution:
-    def isValid(self, s: str) -> bool:
-        stack = []
-        for char in s:
-            if char in [ "(", "[", "{" ]:
-                stack.append(char)
+    def letterCasePermutation(self, s: str) -> List[str]:
+        result = []
+        def helper(lst):
+            if i == len(s):
+                result.append("".copylist)
             else:
-                if len(stack) == 0:
-                    return False
-                if char == ")" and stack.pop() != "(":
-                    return False
-                if char == "]" and stack.pop() != "[":
-                    return False
-                if char == "}" and stack.pop() != "{":
-                    return False
-            return len(stack) == 0
-        
-        
-        
+                if s[i].isalpha():
+                    helper(s[i+1].lower())
+                    helper(s[i+1].upper())
+                else:
+                    helper(s, i+1, currstr+s[i])
+            helper(list(s))
+            return result
